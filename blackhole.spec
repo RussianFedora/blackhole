@@ -7,7 +7,7 @@ Release:	1%{?dist}
 
 License:	MIT
 URL:		http://github.com/3Hren/blackhole
-Source0:	%{name}-%{version}.tar.xz
+Source0:	https://github.com/3Hren/blackhole/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.xz
 
 BuildRequires:	cmake
 
