@@ -2,12 +2,12 @@
 
 Summary:	Attribute-based logger with strong focus on gaining maximum performance
 Name:		blackhole
-Version:	0.3.0
+Version:	0.2.4
 Release:	1%{?dist}
 
 License:	MIT
 URL:		http://github.com/3Hren/blackhole
-Source0:	https://github.com/3Hren/blackhole/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:	%{name}-%{version}.tar.xz
 
 BuildRequires:	cmake
 
@@ -41,5 +41,5 @@ needed for developing software which uses the Blackhole logging library.
 
 
 %changelog
-* Thu Jan 12 2017 Arkady L. Shane <ashejn@russianfedora.pro> - 0.3.0-1
+* Thu Jan 12 2017 Arkady L. Shane <ashejn@russianfedora.pro> - 0.2.4-1
 - initial build
