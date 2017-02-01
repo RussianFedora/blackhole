@@ -1,5 +1,3 @@
-%global debug_package %{nil}
-
 Summary:	Attribute-based logger with strong focus on gaining maximum performance
 Name:		blackhole
 Version:	0.2.4
@@ -18,8 +16,9 @@ performance as possible for such kind of loggers.
 
 %package devel
 Summary: Development files for %{name}
+BuildArch: noarch
 Provides: lib%{name}-devel = %{version}-%{release}
-
+Provides: lib%{name}-devel%{?_isa} = %{version}-%{release}
 
 %description devel
 This package contains libraries, header files and developer documentation
