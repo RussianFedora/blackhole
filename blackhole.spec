@@ -18,7 +18,7 @@ performance as possible for such kind of loggers.
 
 %package devel
 Summary: Development files for %{name}
-Provides: lib%{name}-devel = %{version}-%{release}
+Provides: lib%{name}-devel%{?_isa} = %{version}-%{release}
 
 
 %description devel
