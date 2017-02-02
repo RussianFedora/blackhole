@@ -1,0 +1,27 @@
+From 7ac28895dd72213d0987ee5b329418bbb7dfd958 Mon Sep 17 00:00:00 2001
+From: Evgeniy Polyakov <zbr@ioremap.net>
+Date: Thu, 2 Feb 2017 16:41:22 +0300
+Subject: [PATCH] types: include <math.h> header to resolve std::double_t
+ issues
+
+---
+ src/blackhole/utils/types.hpp | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/src/blackhole/utils/types.hpp b/src/blackhole/utils/types.hpp
+index 9454b56..dcf3397 100644
+--- a/src/blackhole/utils/types.hpp
++++ b/src/blackhole/utils/types.hpp
+@@ -1,6 +1,11 @@
+ #pragma once
+ 
+-#if defined(__clang__) || defined(GCC47)
++#if defined(__clang__) || defined(GCC47) || __GNUC__ >= 5
++# if __GNUC__ >= 5
++// it is needed to resolve <cmath> header which requires std::double_t
++#include <math.h>
++# endif
++
+ #else
+ namespace std {
+ 

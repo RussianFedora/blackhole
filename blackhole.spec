@@ -3,11 +3,12 @@
 Summary:	Attribute-based logger with strong focus on gaining maximum performance
 Name:		blackhole
 Version:	0.2.4
-Release:	2%{?dist}
+Release:	3%{?dist}
 
 License:	MIT
 URL:		http://github.com/3Hren/blackhole
 Source0:	https://github.com/3Hren/blackhole/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.xz
+Patch0:		blackhole-0.2.4-cmath.patch
 
 BuildRequires:	cmake
 
@@ -27,7 +28,7 @@ This package contains libraries, header files and developer documentation
 needed for developing software which uses the Blackhole logging library.
 
 %prep
-%autosetup
+%autosetup -p 1
 
 %build
 %{cmake} -DENABLE_EXAMPLES=OFF .
@@ -43,6 +44,9 @@ needed for developing software which uses the Blackhole logging library.
 
 
 %changelog
+* Thu Feb  2 2017 Arkady L. Shane <ashejn@russianfedora.pro> - 0.2.4-3
+- include <math.h> header to resolve std::double_t
+
 * Wed Feb  1 2017 Arkady L. Shane <ashejn@russianfedora.pro> - 0.2.4-2
 - added Provides
 
